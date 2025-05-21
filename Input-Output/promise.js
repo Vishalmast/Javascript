@@ -12,14 +12,18 @@ prom = new Promise((res, rej)=> {
     console.log("after rej");
 })
 
+console.log("Start");
 prom.then((res)=>{
-    console.log("Succeded in then");
+    console.log(res);
 })
 .catch((rej)=> {
-    console.log("Rejected in catch");
+    console.log(rej);
 })
+console.log("End");
 
 
 // before res
 // after rej
-// Succeded in then
+// Start
+// End
+// Success by Vishal
