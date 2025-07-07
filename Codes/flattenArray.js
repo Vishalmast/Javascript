@@ -21,3 +21,23 @@ Array.prototype.myFlat = function (depth=1){
     
     return res;
 }
+
+
+version 2:
+
+function flattenArray(arr, depth = 1){
+    
+    function util(arr, depth){
+        if (depth === 0) return [...arr];
+        let res = [];
+        for (const ele of arr){
+            if (Array.isArray(ele)){
+                res.push(...util(ele, depth-1));
+            } else {
+                res.push(ele);
+            }
+        }
+        return res;
+    }
+    return util(arr, depth);
+}
